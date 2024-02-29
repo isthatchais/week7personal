@@ -8,6 +8,10 @@ p {
     text-align: center;
   }
   
+.card{
+  width: 450px;
+}
+
   .fa-small {
     font-size: 16px !important;
   }

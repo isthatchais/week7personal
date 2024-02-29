@@ -26,6 +26,32 @@ const savePatient = (req, res, next) => {
   });
 };
 
+
+const saveUser = (req, res, next) => {
+  const validationRule = {
+    googleId: 'string',
+    firstName: ['required', 'regex:/^[A-Za-z]{2,}$'],
+    lastName: ['required', 'regex:/^[A-Za-z]{3,}$'],
+    diaplayName: ['required', 'regex:/^[A-Za-z ]{5,}$'],
+    image: 'string',
+    createdAt: 'string',
+    assignedPatients: []
+  };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
+
 module.exports = {
-  savePatient
+  savePatient,
+  saveUser
 };

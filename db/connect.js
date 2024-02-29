@@ -1,6 +1,7 @@
 const dotenv = require('dotenv');
 dotenv.config();
 const MongoClient = require('mongodb').MongoClient;
+const mongoose = require('mongoose')
 
 let _db;
 
@@ -26,7 +27,13 @@ const getDb = () => {
   return _db;
 };
 
+const initMongoose = () => {
+   mongoose.connect(process.env.MONGODB_URI).
+   catch(err => console.log(err))
+}
+
 module.exports = {
   initDb,
-  getDb
+  getDb,
+  initMongoose
 };

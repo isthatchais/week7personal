@@ -17,8 +17,8 @@ const getOnePatient = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid patient id.');
   }
-  const contactId = new ObjectId(req.params.id);
-  const result = await mongodb.getDb().db('patients').collection('patients').find({ _id: contactId });
+  const patientId = new ObjectId(req.params.id);
+  const result = await mongodb.getDb().db('patients').collection('patients').find({ _id: patientId });
   if (result) {
     result.toArray().then((lists) => {
       res.setHeader('Content-Type', 'application/json');

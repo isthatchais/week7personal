@@ -66,7 +66,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Static folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // Routes
 app.use('/auth', require('./routes/auth'));
@@ -85,3 +85,5 @@ mongodb.initDb((err) => {
     console.log(`Connected to DB and listening on ${port}`);
   }
 });
+
+mongodb.initMongoose()
