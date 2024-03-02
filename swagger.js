@@ -5,8 +5,8 @@ const doc = {
         title: 'My API',
         description: 'Patient Tracker API'
     },
-    host: 'localhost:8080',
-    schemes: ['http'],
+    host: 'week7personal.onrender',
+    schemes: ['https'],
 };
 
 const outputFile = './swagger.json';
