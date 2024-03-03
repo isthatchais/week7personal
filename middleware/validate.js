@@ -32,7 +32,7 @@ const saveUser = (req, res, next) => {
     googleId: 'string',
     firstName: ['required', 'regex:/^[A-Za-z]{2,}$'],
     lastName: ['required', 'regex:/^[A-Za-z]{3,}$'],
-    diaplayName: ['required', 'regex:/^[A-Za-z ]{5,}$'],
+    displayName: ['required', 'regex:/^[A-Za-z ]{5,}$'],
     image: 'string',
     createdAt: 'string',
     assignedPatients: []
