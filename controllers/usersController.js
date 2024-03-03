@@ -82,7 +82,7 @@ const deleteUser = async (req, res) => {
   const response = await mongodb
     .getDb()
     .db('patients')
-    .collection('user')
+    .collection('users')
     .deleteOne({ _id: userId }, true);
   console.log(response);
   if (response.deletedCount > 0) {
